@@ -1,5 +1,5 @@
 import { Fragment, useContext } from "react";
-import { BaseEdge, EdgeLabelRenderer, EdgeProps, getBezierPath, getStraightPath } from "reactflow";
+import { BaseEdge, EdgeLabelRenderer, EdgeProps, getStraightPath } from "reactflow";
 import WorkflowContext from "../../context/WorkflowContext";
 import clsx from "clsx";
 

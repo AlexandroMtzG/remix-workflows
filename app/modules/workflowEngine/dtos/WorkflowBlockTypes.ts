@@ -1,4 +1,3 @@
-import WorkflowBlockActionIcon from "../components/icons/WorkflowBlockActionIcon";
 import ConditionalIcon from "../components/nodes/flow/conditional/ConditionalIcon";
 import DoNothingIcon from "../components/nodes/helpers/doNothing/DoNothingIcon";
 import HttpRequestIcon from "../components/nodes/helpers/httpRequest/HttpRequestIcon";

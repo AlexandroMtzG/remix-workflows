@@ -59,14 +59,17 @@ export function eventStream(signal: AbortSignal, init: InitFunction, options: Re
   let headers = new Headers(options.headers);
 
   if (headers.has("Content-Type")) {
+    // eslint-disable-next-line no-console
     console.warn("Overriding Content-Type header to `text/event-stream`");
   }
 
   if (headers.has("Cache-Control")) {
+    // eslint-disable-next-line no-console
     console.warn("Overriding Cache-Control header to `no-cache`");
   }
 
   if (headers.has("Connection")) {
+    // eslint-disable-next-line no-console
     console.warn("Overriding Connection header to `keep-alive`");
   }
 

@@ -1,4 +1,4 @@
-import { ActionFunction, json, LoaderArgs, V2_MetaFunction } from "@remix-run/node";
+import { ActionFunction, json } from "@remix-run/node";
 import { redirect } from "remix-typedjson";
 import { MetaTagsDto } from "~/application/dtos/seo/MetaTagsDto";
 import { getAllWorkflows } from "~/modules/workflowEngine/db/workflows.db.server";
@@ -11,7 +11,7 @@ export namespace WorkflowsTemplatesApi {
   export type LoaderData = {
     metatags: MetaTagsDto;
   };
-  export let loader = ({}: LoaderArgs) => {
+  export let loader = async () => {
     const data: LoaderData = {
       metatags: [{ title: `Workflow Templates | ${process.env.APP_NAME}` }],
     };

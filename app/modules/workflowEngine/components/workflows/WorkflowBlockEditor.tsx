@@ -104,7 +104,6 @@ export default function WorkflowBlockEditor({
                   }
                 }}
                 onBlur={(e) => {
-                  console.log("[DEBUG] onBlur description");
                   block.description = e.target.value;
                   onSaveBlock({
                     ...block,
@@ -152,7 +151,6 @@ export default function WorkflowBlockEditor({
                         input={input as WorkflowBlockInput}
                         onChange={(value) => {
                           block.input[input.name] = value;
-                          console.log("[DEBUG] onChange input", input.name, value);
                           onSaveBlock({
                             ...block,
                             input: {

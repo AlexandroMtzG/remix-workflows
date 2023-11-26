@@ -1,5 +1,5 @@
 import { WorkflowVariable } from "@prisma/client";
-import { json, LoaderArgs, V2_MetaFunction } from "@remix-run/node";
+import { json, LoaderArgs } from "@remix-run/node";
 import { MetaTagsDto } from "~/application/dtos/seo/MetaTagsDto";
 import { getAllWorkflowVariables } from "~/modules/workflowEngine/db/workflowVariable.db.server";
 import { getTenantIdOrNull } from "~/utils/services/urlService";

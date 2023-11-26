@@ -34,6 +34,7 @@ export default function WorkflowsIdRunManualView() {
       setSelectedTemplate(data.workflow.inputExamples[0].title);
       setInputData(JSON.stringify(data.workflow.inputExamples[0].input, null, 2));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.workflow.inputExamples.length]);
 
   useEffect(() => {

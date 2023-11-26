@@ -30,10 +30,6 @@ export default function ConditionsGroupsInfo({
     setSelectedConditionsGroup(null);
     setAddingNewGroup(false);
   }
-  function onDeleteGroup(idx: number) {
-    const newConditionsGroups = block.conditionGroups.filter((_group, i) => i !== idx);
-    onUpdateConditionsGroups(newConditionsGroups);
-  }
   return (
     <div className="space-y-1">
       {block.conditionGroups.map((group) => {

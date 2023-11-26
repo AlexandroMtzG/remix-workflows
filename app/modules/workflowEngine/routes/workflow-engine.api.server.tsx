@@ -1,4 +1,4 @@
-import { LoaderFunction, json, V2_MetaFunction, LoaderArgs } from "@remix-run/node";
+import { json, LoaderArgs } from "@remix-run/node";
 import { MetaTagsDto } from "~/application/dtos/seo/MetaTagsDto";
 
 export namespace WorkflowEngineApi {
