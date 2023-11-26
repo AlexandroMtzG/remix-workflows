@@ -86,7 +86,7 @@ async function workflowToDto(
       };
     }),
     _count: item._count,
-    readOnly: process.env.READ_ONLY ? true : false,
+    readOnly: process.env.READ_ONLY === "true" ? true : false,
   };
   workflow.blocks.forEach((block) => {
     const { variableName, index } = WorkflowUtils.getVariableName({ workflow, currentBlock: block });
