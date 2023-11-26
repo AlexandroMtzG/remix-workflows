@@ -1,0 +1,160 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Tenant {
+  id                  String               @id @default(cuid())
+  name                String
+  slug                String
+  workflows           Workflow[]
+  workflowExecutions  WorkflowExecution[]
+  workflowVariables   WorkflowVariable[]
+  workflowCredentials WorkflowCredential[]
+}
+
+model User {
+  id        String  @id @default(cuid())
+  email     String  @unique
+  firstName String?
+  lastName  String?
+}
+
+model Workflow {
+  id            String                 @id @default(cuid())
+  createdAt     DateTime               @default(now())
+  updatedAt     DateTime               @updatedAt
+  name          String
+  description   String
+  status        String                 @default("draft")
+  tenantId      String?
+  tenant        Tenant?                @relation(fields: [tenantId], references: [id])
+  blocks        WorkflowBlock[]
+  inputExamples WorkflowInputExample[]
+  executions    WorkflowExecution[]
+}
+
+model WorkflowBlock {
+  id               String                        @id @default(cuid())
+  workflowId       String // Foreign key to the Workflow
+  workflow         Workflow                      @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  createdAt        DateTime                      @default(now())
+  updatedAt        DateTime                      @updatedAt
+  type             String
+  description      String
+  isTrigger        Boolean                       @default(false)
+  isBlock          Boolean                       @default(false)
+  fromBlocks       WorkflowBlockToBlock[]        @relation(name: "toBlock")
+  toBlocks         WorkflowBlockToBlock[]        @relation(name: "fromBlock")
+  input            String
+  executions       WorkflowBlockExecution[]      @relation(name: "executions")
+  fromExecutions   WorkflowBlockExecution[]      @relation(name: "fromExecutions")
+  conditionsGroups WorkflowBlockConditionGroup[]
+}
+
+model WorkflowBlockConditionGroup {
+  id              String                   @id @default(cuid())
+  workflowBlockId String
+  workflowBlock   WorkflowBlock            @relation(fields: [workflowBlockId], references: [id], onDelete: Cascade)
+  index           Int
+  type            String // AND or OR
+  conditions      WorkflowBlockCondition[]
+}
+
+model WorkflowBlockCondition {
+  id                            String                      @id @default(cuid())
+  workflowBlockConditionGroupId String
+  workflowBlockConditionGroup   WorkflowBlockConditionGroup @relation(fields: [workflowBlockConditionGroupId], references: [id], onDelete: Cascade)
+  index                         Int
+  variable                      String
+  operator                      String
+  value                         String
+}
+
+model WorkflowBlockToBlock {
+  id          String        @id @default(cuid())
+  fromBlockId String
+  fromBlock   WorkflowBlock @relation(name: "fromBlock", fields: [fromBlockId], references: [id], onDelete: Cascade)
+  toBlockId   String
+  toBlock     WorkflowBlock @relation(name: "toBlock", fields: [toBlockId], references: [id], onDelete: Cascade)
+  condition   String?
+
+  @@unique([fromBlockId, toBlockId])
+}
+
+model WorkflowExecution {
+  id         String                   @id @default(cuid())
+  createdAt  DateTime                 @default(now())
+  updatedAt  DateTime                 @updatedAt
+  workflowId String
+  workflow   Workflow                 @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  tenantId   String?
+  tenant     Tenant?                  @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  type       String // manual, api, stream
+  status     String
+  input      String
+  output     String?
+  duration   Int?
+  endedAt    DateTime?
+  error      String?
+  blockRuns  WorkflowBlockExecution[]
+}
+
+model WorkflowInputExample {
+  id         String   @id @default(cuid())
+  createdAt  DateTime @default(now())
+  workflowId String
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  title      String
+  input      String?
+
+  @@unique([workflowId, title])
+}
+
+model WorkflowBlockExecution {
+  id                  String            @id @default(cuid())
+  workflowExecutionId String
+  workflowExecution   WorkflowExecution @relation(fields: [workflowExecutionId], references: [id], onDelete: Cascade)
+  workflowBlockId     String
+  workflowBlock       WorkflowBlock     @relation(name: "executions", fields: [workflowBlockId], references: [id], onDelete: Cascade)
+  fromWorkflowBlockId String?
+  fromWorkflowBlock   WorkflowBlock?    @relation(name: "fromExecutions", fields: [fromWorkflowBlockId], references: [id])
+  status              String
+  startedAt           DateTime
+  input               String?
+  output              String?
+  duration            Int?
+  endedAt             DateTime?
+  error               String?
+}
+
+model WorkflowVariable {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tenantId  String?
+  tenant    Tenant?  @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  name      String
+  value     String
+
+  @@unique([tenantId, name])
+}
+
+model WorkflowCredential {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tenantId  String?
+  tenant    Tenant?  @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  name      String
+  value     String
+
+  @@unique([tenantId, name])
+}

@@ -1,0 +1,63 @@
+{
+  "name": "remix-workflows",
+  "private": true,
+  "sideEffects": false,
+  "prisma": {
+    "seed": "node --require esbuild-register prisma/seed.ts"
+  },
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev",
+    "lint": "eslint --ext .tsx,.ts .",
+    "typecheck": "tsc",
+    "prettier": "prettier --write '**/*.{ts,tsx}'"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^2.0.17",
+    "@monaco-editor/react": "^4.5.1",
+    "@prisma/client": "4.12.0",
+    "@remix-run/node": "1.14.3",
+    "@remix-run/react": "1.14.3",
+    "@remix-run/vercel": "1.14.3",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@vercel/node": "^2.6.2",
+    "@vercel/remix": "1.14.3-patch.1",
+    "ajv": "^8.12.0",
+    "clsx": "^1.2.1",
+    "dagre": "^0.8.5",
+    "esbuild-register": "^3.5.0",
+    "handlebars": "^4.7.8",
+    "isbot": "latest",
+    "marked": "^4.0.14",
+    "moment": "^2.29.4",
+    "numeral": "^2.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "reactflow": "^11.8.2",
+    "remix-typedjson": "^0.1.7",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "1.14.3",
+    "@remix-run/eslint-config": "1.14.3",
+    "@remix-run/serve": "1.14.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/dagre": "^0.7.49",
+    "@types/marked": "^4.0.3",
+    "@types/numeral": "^2.0.2",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.8",
+    "@types/uuid": "^9.0.7",
+    "eslint": "^8.27.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "prisma": "^5.6.0",
+    "tailwindcss": "^3.2.7",
+    "tailwindcss-animate": "^1.0.6",
+    "typescript": "^4.8.4"
+  }
+}
