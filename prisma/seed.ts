@@ -4,8 +4,8 @@ import DefaultWorkflowTemplates from "~/modules/workflowEngine/utils/DefaultWork
 async function seed() {
   for (let index = 0; index < DefaultWorkflowTemplates.length; index++) {
     await WorkflowsTemplatesService.importWorkflows(DefaultWorkflowTemplates[index], {
-      tenantId: null
-    })
+      tenantId: null,
+    });
   }
 }
 

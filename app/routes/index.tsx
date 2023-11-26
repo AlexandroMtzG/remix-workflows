@@ -20,13 +20,11 @@ export default function Index() {
   return (
     <div>
       <Header />
-      <div className="relative mx-auto flex flex-col items-center justify-center space-y-8 py-6 px-8 max-w-5xl">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center justify-center space-y-8 px-8 py-6">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Remix Workflows</h1>
         <p className="text-center text-2xl text-gray-800">Build simple but flexible workflows for your SaaS.</p>
-        <div className="mt-10 flex items-center justify-center gap-x-6 w-full max-w-md">
-          <ButtonPrimary to="/admin/workflow-engine">
-            Get Started ({data.workflows.length} workflows)
-          </ButtonPrimary>
+        <div className="mt-10 flex w-full max-w-md items-center justify-center gap-x-6">
+          <ButtonPrimary to="/admin/workflow-engine">Get Started ({data.workflows.length} workflows)</ButtonPrimary>
         </div>
       </div>
     </div>

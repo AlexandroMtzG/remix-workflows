@@ -8,7 +8,7 @@ import { createWorkflowVariable } from "../db/workflowVariable.db.server";
 import { validateIsReadOnly } from "../utils/WorkflowUtils";
 
 async function importWorkflows(template: WorkflowsTemplateDto, session: { tenantId: string | null }) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   const allWorkflowVariables = await db.workflowVariable.findMany({
     where: { tenantId: session.tenantId },
   });

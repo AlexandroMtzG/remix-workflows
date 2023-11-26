@@ -29,7 +29,7 @@ export async function getWorkflowVariableByName(name: string, { tenantId }: { te
 }
 
 export async function createWorkflowVariable({ tenantId, name, value }: { tenantId: string | null; name: string; value: string }) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflowVariable.create({
     data: {
       tenantId,
@@ -40,7 +40,7 @@ export async function createWorkflowVariable({ tenantId, name, value }: { tenant
 }
 
 export async function updateWorkflowVariable(id: string, { name, value }: { name?: string; value?: string }) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflowVariable.update({
     where: {
       id,
@@ -53,7 +53,7 @@ export async function updateWorkflowVariable(id: string, { name, value }: { name
 }
 
 export async function deleteWorkflowVariable(id: string) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflowVariable.delete({
     where: {
       id,

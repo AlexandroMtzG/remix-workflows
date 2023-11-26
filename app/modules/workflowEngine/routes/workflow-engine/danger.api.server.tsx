@@ -33,8 +33,8 @@ export namespace WorkflowsDangerApi {
   export const action = async ({ request, params }: ActionArgs) => {
     const form = await request.formData();
     const tenantId = await getTenantIdOrNull({ request, params });
-    
-    validateIsReadOnly()
+
+    validateIsReadOnly();
     const action = form.get("action")?.toString();
     if (action === "reset-all-data") {
       const workflows = await db.workflow.deleteMany({ where: { tenantId } });

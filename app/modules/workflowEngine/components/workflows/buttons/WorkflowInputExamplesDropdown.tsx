@@ -14,7 +14,7 @@ export default function WorkflowInputExamplesDropdown({
   return (
     <DropdownOptions
       width="w-80"
-      button={<div className="text-sm font-medium bg-white px-2 py-1 border border-gray-300 rounded-md hover:bg-gray-50">Pick an example</div>}
+      button={<div className="rounded-md border border-gray-300 bg-white px-2 py-1 text-sm font-medium hover:bg-gray-50">Pick an example</div>}
       options={
         <div>
           {workflow.inputExamples.map((inputExample) => {
@@ -24,7 +24,7 @@ export default function WorkflowInputExamplesDropdown({
                   <button
                     type="button"
                     onClick={() => onSelected(inputExample)}
-                    className={clsx("w-full text-left truncate", active ? "bg-gray-100 text-gray-900" : "text-gray-700", "block px-4 py-2 text-sm")}
+                    className={clsx("w-full truncate text-left", active ? "bg-gray-100 text-gray-900" : "text-gray-700", "block px-4 py-2 text-sm")}
                   >
                     {inputExample.title}
                   </button>

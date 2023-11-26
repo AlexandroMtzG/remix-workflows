@@ -77,11 +77,11 @@ export default function SlideOver({ title = "", size = "md", paddingContent = "p
             </Transition>
           </section>
         </div>
-        <div className="absolute top-4 right-10">
+        <div className="absolute right-10 top-4">
           {!title && (
             <button
               onClick={() => onClose()}
-              className="flex items-center space-x-1 rounded-md border border-gray-300 bg-white py-1 px-2 text-xs font-extrabold uppercase text-gray-800 shadow-lg hover:bg-gray-200"
+              className="flex items-center space-x-1 rounded-md border border-gray-300 bg-white px-2 py-1 text-xs font-extrabold uppercase text-gray-800 shadow-lg hover:bg-gray-200"
             >
               <div>Close</div>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-3.5">

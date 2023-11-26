@@ -160,7 +160,7 @@ export async function updateWorkflowExecution(
 }
 
 export async function deleteWorkflowExecution(id: string) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflowExecution.delete({
     where: {
       id,

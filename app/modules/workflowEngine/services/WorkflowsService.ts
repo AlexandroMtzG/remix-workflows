@@ -105,7 +105,7 @@ async function workflowToDto(
 }
 
 async function addConditionGroup(workflowBlock: WorkflowBlockDto, data: WorkflowConditionsGroupDto[]) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await Promise.all(
     data.map(async (conditionGroup) => {
       const conditions = conditionGroup.conditions.map((condition) => {
@@ -220,8 +220,8 @@ async function addBlock({
   type: string;
   fromBlockId: string | undefined;
   condition: string | null;
-  }) {
-  validateIsReadOnly()
+}) {
+  validateIsReadOnly();
   const workflowBlock = WorkflowBlockTypes.find((f) => f.value === type);
   if (!workflowBlock) {
     throw new Error("Invalid workflow block type: " + type);
@@ -271,14 +271,14 @@ async function addBlock({
 }
 
 async function deleteBlock(id: string) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflowBlock.delete({
     where: { id },
   });
 }
 
 async function connectBlocks({ fromBlockId, toBlockId, condition }: { fromBlockId: string; toBlockId: string; condition: string | null }) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflowBlockToBlock.create({
     data: {
       fromBlockId,
@@ -289,7 +289,7 @@ async function connectBlocks({ fromBlockId, toBlockId, condition }: { fromBlockI
 }
 
 async function deleteConnection(params: { fromBlockId: string; toBlockId: string } | { id: string }) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   if ("id" in params) {
     return await db.workflowBlockToBlock.delete({
       where: { id: params.id },
@@ -305,7 +305,7 @@ async function deleteConnection(params: { fromBlockId: string; toBlockId: string
 }
 
 async function updateConditionsGroups(block: WorkflowBlockDto, conditionGroups: WorkflowConditionsGroupDto[]) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   await db.workflowBlockConditionGroup.deleteMany({
     where: {
       workflowBlockId: block.id,
@@ -353,7 +353,7 @@ async function getExecution(id: string, { tenantId }: { tenantId: string | null 
 }
 
 async function createInputExample({ workflowId, title, input }: { workflowId: string; title: string; input: string }) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflowInputExample.create({
     data: {
       workflowId,
@@ -363,7 +363,7 @@ async function createInputExample({ workflowId, title, input }: { workflowId: st
   });
 }
 async function updateInputExample(id: string, { title, input }: { title: string; input: string }) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflowInputExample.update({
     where: { id },
     data: {
@@ -373,7 +373,7 @@ async function updateInputExample(id: string, { title, input }: { title: string;
   });
 }
 async function deleteInputExample(id: string) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflowInputExample.delete({
     where: { id },
   });

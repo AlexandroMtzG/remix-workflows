@@ -21,7 +21,7 @@ export async function createWorkflowBlock(data: {
   // positionX: number;
   // positionY: number;
 }) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflowBlock.create({
     data: {
       workflowId: data.workflowId,
@@ -46,7 +46,7 @@ export async function updateWorkflowBlock(
     isBlock?: boolean;
   }
 ) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflowBlock.update({
     where: { id },
     data: {

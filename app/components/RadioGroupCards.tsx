@@ -41,9 +41,9 @@ export default function RadioGroupCards({
             {({ checked, active }) => (
               <>
                 <span className="flex flex-1">
-                  <span className="flex flex-col w-full">
+                  <span className="flex w-full flex-col">
                     {item.icon ? (
-                      <div className="flex justify-center w-full">{item.icon}</div>
+                      <div className="flex w-full justify-center">{item.icon}</div>
                     ) : (
                       <>
                         <RadioGroup.Label as="span" className="block text-sm font-medium text-gray-900">

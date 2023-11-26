@@ -28,8 +28,8 @@ export default function BlockEditorNode({ id, data }: NodeProps) {
     <button
       type="button"
       className={clsx(
-        "border w-[250px] h-[80px] rounded-md focus:ring-1 focus:ring-blue-600 focus:ring-offset-2 text-left flex flex-col justify-center p-2 relative",
-        isNodeSelected(id) ? "ring-1 ring-blue-600 ring-offset-2 bg-blue-50" : "bg-white",
+        "relative flex h-[80px] w-[250px] flex-col justify-center rounded-md border p-2 text-left focus:ring-1 focus:ring-blue-600 focus:ring-offset-2",
+        isNodeSelected(id) ? "bg-blue-50 ring-1 ring-blue-600 ring-offset-2" : "bg-white",
         errors.length ? "border-red-300" : "border-slate-300"
       )}
       onKeyDown={(e) => {
@@ -40,17 +40,17 @@ export default function BlockEditorNode({ id, data }: NodeProps) {
         }
       }}
     >
-      <div className="space-y-2 w-full">
+      <div className="w-full space-y-2">
         <div className="flex justify-between space-x-2">
           <div className="flex items-center space-x-2 truncate">
-            <workflowBlock.icon className="h-4 w-4 text-gray-400 flex-shrink-0" />
-            <div className="text-sm text-gray-700 font-medium truncate">{workflowBlock.name}</div>
+            <workflowBlock.icon className="h-4 w-4 flex-shrink-0 text-gray-400" />
+            <div className="truncate text-sm font-medium text-gray-700">{workflowBlock.name}</div>
           </div>
           <div>
             <div
               className={clsx(
-                "text-xs px-2 py-1 border rounded-md",
-                workflowBlock.type === "trigger" ? "bg-yellow-50 text-yellow-800 border-yellow-200" : "bg-gray-50 text-gray-500 border-gray-200"
+                "rounded-md border px-2 py-1 text-xs",
+                workflowBlock.type === "trigger" ? "border-yellow-200 bg-yellow-50 text-yellow-800" : "border-gray-200 bg-gray-50 text-gray-500"
               )}
             >
               {workflowBlock.type === "trigger" ? <span>Trigger</span> : <span>{workflowBlock.category}</span>}
@@ -60,10 +60,10 @@ export default function BlockEditorNode({ id, data }: NodeProps) {
         <div className="border-t border-gray-200" />
         {errors.length > 0 ? (
           <div>
-            <div className="text-red-500 text-xs line-clamp-1">{errors.join(", ")}</div>
+            <div className="line-clamp-1 text-xs text-red-500">{errors.join(", ")}</div>
           </div>
         ) : (
-          <div className=" text-gray-500 text-xs line-clamp-1">{block.description || "No description"}</div>
+          <div className=" line-clamp-1 text-xs text-gray-500">{block.description || "No description"}</div>
         )}
 
         {workflowBlock.type === "action" && (

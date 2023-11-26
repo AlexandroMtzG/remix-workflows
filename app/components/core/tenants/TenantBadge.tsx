@@ -3,5 +3,5 @@ interface Props {
   showCurrent?: boolean;
 }
 export default function TenantBadge({ item, showCurrent }: Props) {
-  return <div>{item ? <span className="text-gray-700">{item.name}</span> : <span className="text-gray-500 italic">- Admin -</span>}</div>;
+  return <div>{item ? <span className="text-gray-700">{item.name}</span> : <span className="italic text-gray-500">- Admin -</span>}</div>;
 }

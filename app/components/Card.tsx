@@ -36,27 +36,27 @@ const Card = ({
   ];
 
   return (
-    <article className=" bg- animate-background rounded-xl border border-gray-200 bg-[length:400%_400%] shadow-md transition [animation-duration:_6s] hover:shadow-xl hover:border-gray-300">
-      <div className="rounded-[10px] bg-white overflow-hidden">
-        {images && images?.length > 0 && <img alt={title} src={images[0].url} className="h-32 w-full object-cover border-b border-gray-200" />}
+    <article className=" bg- animate-background rounded-xl border border-gray-200 bg-[length:400%_400%] shadow-md transition [animation-duration:_6s] hover:border-gray-300 hover:shadow-xl">
+      <div className="overflow-hidden rounded-[10px] bg-white">
+        {images && images?.length > 0 && <img alt={title} src={images[0].url} className="h-32 w-full border-b border-gray-200 object-cover" />}
 
         <div className="p-4 sm:p-6">
-          <time className="block text-xs text-gray-500 uppercase font-medium">{contentType}</time>
+          <time className="block text-xs font-medium uppercase text-gray-500">{contentType}</time>
 
           <h3 className="mt-0.5 text-lg font-medium text-gray-900">{title}</h3>
 
-          <div className="mt-2 text-sm text-gray-500 line-clamp-5">
+          <div className="mt-2 line-clamp-5 text-sm text-gray-500">
             <p>{description}</p>
           </div>
 
           <div className="mt-4 space-y-1">
-            <div className="block text-xs text-gray-500 uppercase font-medium">Keywords</div>
+            <div className="block text-xs font-medium uppercase text-gray-500">Keywords</div>
             <div className="flex flex-wrap gap-1">
               {keywords.map((keyword) => (
                 <span
                   key={keyword}
                   className={clsx(
-                    "whitespace-nowrap rounded-md px-1.5 py-0.5 text-xs border capitalize",
+                    "whitespace-nowrap rounded-md border px-1.5 py-0.5 text-xs capitalize",
                     badgeColors[Math.floor(Math.random() * badgeColors.length)]
                   )}
                 >
@@ -67,12 +67,12 @@ const Card = ({
           </div>
 
           <div className="mt-4 space-y-1">
-            <div className="block text-xs text-gray-500 uppercase font-medium">Audience</div>
+            <div className="block text-xs font-medium uppercase text-gray-500">Audience</div>
             <div className="flex flex-wrap gap-1">
               {audience.map((audience) => (
                 <span
                   key={audience}
-                  className={clsx("whitespace-nowrap rounded-md px-1.5 py-0.5 text-xs border capitalize", "bg-gray-50 text-gray-700 border-gray-200")}
+                  className={clsx("whitespace-nowrap rounded-md border px-1.5 py-0.5 text-xs capitalize", "border-gray-200 bg-gray-50 text-gray-700")}
                 >
                   {audience}
                 </span>
@@ -81,11 +81,11 @@ const Card = ({
           </div>
 
           <div className="mt-4 space-y-1">
-            <div className="block text-xs text-gray-500 uppercase font-medium">Tone</div>
+            <div className="block text-xs font-medium uppercase text-gray-500">Tone</div>
             <div>
               <span
                 className={clsx(
-                  "whitespace-nowrap rounded-md px-1.5 py-0.5 text-xs border capitalize",
+                  "whitespace-nowrap rounded-md border px-1.5 py-0.5 text-xs capitalize",
                   badgeColors[Math.floor(Math.random() * badgeColors.length)]
                 )}
               >
@@ -94,14 +94,14 @@ const Card = ({
             </div>
           </div>
 
-          <div className="mt-4 space-y-1 prose">
-            <div className="block text-xs text-gray-500 uppercase font-medium">Image Prompt</div>
-            <p className="text-gray-500 text-sm">{imagePrompt}</p>
+          <div className="prose mt-4 space-y-1">
+            <div className="block text-xs font-medium uppercase text-gray-500">Image Prompt</div>
+            <p className="text-sm text-gray-500">{imagePrompt}</p>
           </div>
 
-          <div className="mt-4 space-y-1 prose">
-            <div className="block text-xs text-gray-500 uppercase font-medium">Outline</div>
-            <ol className="text-gray-500 text-sm">
+          <div className="prose mt-4 space-y-1">
+            <div className="block text-xs font-medium uppercase text-gray-500">Outline</div>
+            <ol className="text-sm text-gray-500">
               {outline.map((step, idx) => {
                 return <li key={idx}>{step}</li>;
               })}

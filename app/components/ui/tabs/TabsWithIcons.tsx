@@ -65,7 +65,7 @@ export default function TabsWithIcons({ tabs, className, justify }: Props) {
                     to={tab.href}
                     className={clsx(
                       tab.current ? "border-accent-500 text-accent-600" : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
-                      "group inline-flex items-center space-x-2 border-b-2 py-2 px-1 text-sm font-medium",
+                      "group inline-flex items-center space-x-2 border-b-2 px-1 py-2 text-sm font-medium",
                       tab.className
                     )}
                     aria-current={tab.current ? "page" : undefined}
@@ -80,7 +80,7 @@ export default function TabsWithIcons({ tabs, className, justify }: Props) {
                     onClick={tab.onClick}
                     className={clsx(
                       tab.current ? "border-accent-500 text-accent-600" : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
-                      "group inline-flex w-full items-center space-x-2 border-b-2 py-2 px-1 text-sm font-medium",
+                      "group inline-flex w-full items-center space-x-2 border-b-2 px-1 py-2 text-sm font-medium",
                       tab.className
                     )}
                     aria-current={tab.current ? "page" : undefined}

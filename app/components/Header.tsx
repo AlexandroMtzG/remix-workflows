@@ -45,7 +45,7 @@ export default function Header() {
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:space-x-4 lg:items-center">
+        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-4">
           <a href="https://github.com/AlexandroMtzG/remix-workflows" className="text-sm font-semibold leading-6 text-gray-900">
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
               <path

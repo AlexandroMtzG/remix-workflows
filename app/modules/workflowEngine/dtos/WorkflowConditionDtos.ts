@@ -13,7 +13,7 @@ export type WorkflowConditionsDto = {
   value: string; // The value to compare against
 };
 
-export type WorkflowConditionOperator = typeof WorkflowConditionOperators[number]["value"];
+export type WorkflowConditionOperator = (typeof WorkflowConditionOperators)[number]["value"];
 export const WorkflowConditionOperators = [
   { name: "Equals", value: "=", requiresValue: true },
   { name: "Not equals", value: "!=", requiresValue: true },

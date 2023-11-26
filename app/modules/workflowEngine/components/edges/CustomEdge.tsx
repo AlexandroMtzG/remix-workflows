@@ -48,8 +48,8 @@ export default function CustomEdge({ id, data, sourceX, sourceY, targetX, target
                 condition === "true"
                   ? "border-green-300 bg-green-50 text-green-800"
                   : condition === "false"
-                  ? "border-red-300 bg-red-50 text-red-800"
-                  : "border-gray-300 bg-gray-50 text-gray-800"
+                    ? "border-red-300 bg-red-50 text-red-800"
+                    : "border-gray-300 bg-gray-50 text-gray-800"
               )}
               onClick={(e) => {
                 e.stopPropagation();

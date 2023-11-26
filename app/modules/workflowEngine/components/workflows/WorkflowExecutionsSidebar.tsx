@@ -177,18 +177,18 @@ function ExecutePanel({
               </div>
             </div>
           </Link>
-            <div className="rounded-md border border-dashed border-gray-300 bg-gray-100 opacity-50 p-3 hover:border-dotted cursor-not-allowed">
-              <div className="space-y-1">
-                <div className="text-sm font-medium text-gray-800">API call</div>
-                <div className=" text-xs text-gray-600">Only for SaasRock Core and Enterprise.</div>
-              </div>
-          </div>
-          <div className="rounded-md border border-dashed border-gray-300 bg-gray-100 opacity-50 p-3 hover:border-dotted cursor-not-allowed">
-              <div className="space-y-1">
-                <div className="text-sm font-medium text-gray-800">Stream</div>
-                <div className=" text-xs text-gray-600">Enterprise-only.</div>
-              </div>
+          <div className="cursor-not-allowed rounded-md border border-dashed border-gray-300 bg-gray-100 p-3 opacity-50 hover:border-dotted">
+            <div className="space-y-1">
+              <div className="text-sm font-medium text-gray-800">API call</div>
+              <div className=" text-xs text-gray-600">Only for SaasRock Core and Enterprise.</div>
             </div>
+          </div>
+          <div className="cursor-not-allowed rounded-md border border-dashed border-gray-300 bg-gray-100 p-3 opacity-50 hover:border-dotted">
+            <div className="space-y-1">
+              <div className="text-sm font-medium text-gray-800">Stream</div>
+              <div className=" text-xs text-gray-600">Enterprise-only.</div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="space-y-1 overflow-y-scroll">

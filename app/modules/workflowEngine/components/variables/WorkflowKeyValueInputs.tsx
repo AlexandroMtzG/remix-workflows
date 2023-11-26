@@ -47,18 +47,18 @@ export default function WorkflowKeyValueInputs({
   };
 
   return (
-    <div className="bg-gray-50 border border-gray-300 p-2 space-y-1 rounded-md">
+    <div className="space-y-1 rounded-md border border-gray-300 bg-gray-50 p-2">
       {pairs.map(({ id, key, value }) => (
-        <div key={id} className="grid grid-cols-12 gap-1 truncate relative group">
+        <div key={id} className="group relative grid grid-cols-12 gap-1 truncate">
           <button
             onClick={() => {
               const updatedPairs = pairs.filter((pair) => pair.id !== id);
               setPairs(updatedPairs);
               triggerOnChange(updatedPairs);
             }}
-            className="absolute top-1.5 right-1 p-1 hidden group-hover:block"
+            className="absolute right-1 top-1.5 hidden p-1 group-hover:block"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -66,10 +66,10 @@ export default function WorkflowKeyValueInputs({
               />
             </svg>
           </button>
-          <div className="p-0.5 col-span-6">
+          <div className="col-span-6 p-0.5">
             <WorkflowVariableTextInput workflow={workflow} block={block} name="key" value={key} onChange={(e) => handleKeyChange(id, e)} placeholder="Key" />
           </div>
-          <div className="p-0.5 col-span-6">
+          <div className="col-span-6 p-0.5">
             <WorkflowVariableTextInput
               workflow={workflow}
               block={block}
@@ -81,7 +81,7 @@ export default function WorkflowKeyValueInputs({
           </div>
         </div>
       ))}
-      <button onClick={handleAddPair} className="bg-gray-50 hover:bg-gray-100 border border-gray-300 px-2 py-1 rounded-md text-gray-600 text-xs">
+      <button onClick={handleAddPair} className="rounded-md border border-gray-300 bg-gray-50 px-2 py-1 text-xs text-gray-600 hover:bg-gray-100">
         Add
       </button>
     </div>

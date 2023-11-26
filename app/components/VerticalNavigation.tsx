@@ -18,8 +18,8 @@ export default function VerticalNavigation({
           key={item.name}
           to={item.href}
           className={clsx(
-            item.current ? "bg-gray-800 text-white border-gray-800" : "text-gray-400 hover:bg-gray-900 hover:text-gray-50 border-transparent",
-            "w-full flex items-center rounded-md px-3 py-2 text-sm font-medium border"
+            item.current ? "border-gray-800 bg-gray-800 text-white" : "border-transparent text-gray-400 hover:bg-gray-900 hover:text-gray-50",
+            "flex w-full items-center rounded-md border px-3 py-2 text-sm font-medium"
           )}
           aria-current={item.current ? "page" : undefined}
         >

@@ -2,7 +2,7 @@ import { marked } from "marked";
 
 export default function () {
   return (
-    <div className="prose px-12 mx-auto max-w-7xl">
+    <div className="prose mx-auto max-w-7xl px-12">
       <div
         dangerouslySetInnerHTML={{
           __html: marked(content),
@@ -68,4 +68,4 @@ Licensed under the MIT License.
 If you find **Remix Workflows** useful and would like to support its development, consider becoming a sponsor. Your sponsorship will help ensure the continued maintenance and improvement of this project.
 
 You can sponsor me on [GitHub Sponsors](https://github.com/sponsors/AlexandroMtzG). Every contribution is highly appreciated!
-`
+`;

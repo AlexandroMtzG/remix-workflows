@@ -89,7 +89,7 @@ export async function getWorkflowByName({ name, tenantId }: { name: string; tena
 }
 
 export async function createWorkflow(data: { tenantId: string | null; name: string; description: string }) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflow.create({
     data: {
       tenantId: data.tenantId,
@@ -107,7 +107,7 @@ export async function updateWorkflow(
     status?: "draft" | "live" | "archived";
   }
 ) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflow.updateMany({
     where: { id },
     data: {
@@ -119,7 +119,7 @@ export async function updateWorkflow(
 }
 
 export async function deleteWorkflow(id: string) {
-  validateIsReadOnly()
+  validateIsReadOnly();
   return await db.workflow.deleteMany({
     where: { id },
   });
