@@ -10,7 +10,7 @@ type LoaderData = {
 };
 export let loader = async () => {
   const data: LoaderData = {
-    workflows: await getAllWorkflows({ tenantId: null, status: "live" }),
+    workflows: await getAllWorkflows({ tenantId: null }),
   };
   return json(data);
 };
