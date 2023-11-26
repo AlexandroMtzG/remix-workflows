@@ -117,17 +117,6 @@ export default function WorkflowsIndexView() {
 
       <TableSimple
         items={filteredItems()}
-        actions={[
-          {
-            title: "Edit",
-            onClickRoute: (_, i) => `${i.id}`,
-          },
-          {
-            title: "Delete",
-            onClick: (_, i) => onDelete(i),
-            destructive: true,
-          },
-        ]}
         headers={[
           {
             name: "status",
@@ -170,9 +159,17 @@ export default function WorkflowsIndexView() {
             ),
           },
           {
-            name: "createdAt",
-            title: "Created at",
-            value: (i) => <DateCell date={i.createdAt ?? null} />,
+            name: "actions",
+            title: "",
+            value: (i) => (
+              <div className="flex items-center space-x-1">
+                <ButtonSecondary to={`${i.id}/run/manual`}>Run</ButtonSecondary>
+                <ButtonSecondary to={`${i.id}`}>Edit</ButtonSecondary>
+                <ButtonSecondary destructive onClick={() => onDelete(i)}>
+                  Delete
+                </ButtonSecondary>
+              </div>
+            ),
           },
         ]}
         noRecords={

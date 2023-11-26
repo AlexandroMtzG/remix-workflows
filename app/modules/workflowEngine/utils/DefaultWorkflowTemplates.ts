@@ -143,7 +143,10 @@ const templates: WorkflowsTemplateDto[] = [
           },
         ],
         toBlocks: [{ fromBlockId: "manualTrigger", toBlockId: "alertUser" }],
-        inputExamples: [{ title: "Existing item", input: { message: "Hello world!" } }],
+        inputExamples: [
+          { title: "Hello world", input: { message: "Hello world!" } },
+          { title: "Long message", input: { message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultrices, nunc nisl ultricies nunc, eu ultricies nisl nisl eget nisl. Donec euismod, nisl eget ultricies ultrices, nunc nisl ultricies nunc, eu ultricies nisl nisl eget nisl." } },
+        ],
       },
     ],
     variables: [],

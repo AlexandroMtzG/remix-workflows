@@ -133,7 +133,7 @@ export default function SidebarLayout({ layout, children }: Props) {
 
 function NavBar({ title }: { title?: string }) {
   return (
-    <div className="flex flex-1 justify-between space-x-2 px-3">
+    <div className="flex flex-1 items-center justify-between space-x-2 px-3 pr-6">
       <div className="flex flex-1 items-center">
         <div className="font-extrabold">{title}</div>
       </div>
