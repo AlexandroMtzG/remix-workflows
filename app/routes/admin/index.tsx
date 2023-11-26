@@ -21,9 +21,9 @@ This is the Workflows feature of [SaasRock](https://saasrock.com/?ref=remix-work
 There are 4 workflows editions:
 
 - Open source (this project)
-- [SaasRock](https://saasrock.com/?ref=remix-workflows&utm_source=workflows-editions) Starter 🌱 - $149 one-time + no updates
-- [SaasRock](https://saasrock.com/?ref=remix-workflows&utm_source=workflows-editions) Core 🪨 - $1,399/y + updates
-- [SaasRock](https://saasrock.com/?ref=remix-workflows&utm_source=workflows-editions) Enterprise 🚀 - $2,099/y + updates
+- [SaasRock](https://saasrock.com/pricing?ref=remix-workflows&utm_source=workflows-editions) Starter 🌱 - $149 one-time + no updates
+- [SaasRock](https://saasrock.com/pricing?ref=remix-workflows&utm_source=workflows-editions) Core 🪨 - $1,399/y + updates
+- [SaasRock](https://saasrock.com/pricing?ref=remix-workflows&utm_source=workflows-editions) Enterprise 🚀 - $2,099/y + updates
 
 Full feature comparison in the following table.
 
@@ -62,6 +62,13 @@ Full feature comparison in the following table.
 ### License
 
 Licensed under the MIT License.
+
+### Other Open Source Projects
+
+- [Remix Page Blocks](https://github.com/AlexandroMtzG/remix-page-blocks): Simple page block editor with Remix and Tailwind CSS.
+- [Remix Blocks](https://github.com/AlexandroMtzG/remix-blocks): Ready-to-use Remix + Tailwind CSS routes and components.
+- [SaasRock Knowledge Base](https://github.com/alexandroMtzG/saasrock-kb): Knowledge Base starter kit with WYSIWYG, Markdown, GPT, and Multi-language support.
+- [Novel Remix](https://github.com/AlexandroMtzG/novel-remix): Remix Edition - Notion-style WYSIWYG editor with AI-powered autocompletion.
 
 ### Sponsor
 
