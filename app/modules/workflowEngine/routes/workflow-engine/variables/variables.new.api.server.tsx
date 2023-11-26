@@ -1,4 +1,4 @@
-import { ActionArgs, json, redirect } from "@remix-run/node";
+import { ActionArgs, LoaderArgs, json, redirect } from "@remix-run/node";
 import UrlUtils from "~/utils/app/UrlUtils";
 import { createWorkflowVariable, getWorkflowVariableByName } from "~/modules/workflowEngine/db/workflowVariable.db.server";
 import { getTenantIdOrNull } from "~/utils/services/urlService";
@@ -8,7 +8,7 @@ export namespace WorkflowsVariablesNewApi {
   export type LoaderData = {
     metatags: MetaTagsDto;
   };
-  export let loader = async () => {
+  export let loader = async (_: LoaderArgs) => {
     const data: LoaderData = {
       metatags: [{ title: `New Workflows Variable | ${process.env.APP_NAME}` }],
     };
