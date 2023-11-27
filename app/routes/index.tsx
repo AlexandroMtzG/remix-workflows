@@ -26,6 +26,16 @@ export default function Index() {
         <div className="mt-10 flex w-full max-w-md items-center justify-center gap-x-6">
           <ButtonPrimary to="/admin/workflow-engine">Get Started ({data.workflows.length} workflows)</ButtonPrimary>
         </div>
+        <div className="max-w-lg mx-auto w-full h-64">
+          <iframe
+                key="demo"
+                src="https://www.loom.com/embed/bdab996c089f471ab508a97ba2d506e2"
+                title="Remix Workflows Demo"
+                loading="lazy"
+                className="min-h-full w-full object-cover md:h-auto"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>
+          </div>
       </div>
     </div>
   );

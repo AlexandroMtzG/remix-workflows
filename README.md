@@ -7,7 +7,7 @@ This is the Workflows feature of [SaasRock](https://saasrock.com), read the intr
 ### Demo
 
 - Try it out (read-only): [https://remix-workflows.vercel.app](https://remix-workflows.vercel.app)
-- [Watch the introduction video demo](https://www.loom.com/share/c5d6a04da4214e3689b38d0e5d211e25)
+- [Watch the introduction video demo](https://www.loom.com/share/bdab996c089f471ab508a97ba2d506e2?sid=460e4675-57cf-4877-bec3-f048d8ffad7b)
 
 ### Getting Started
 
