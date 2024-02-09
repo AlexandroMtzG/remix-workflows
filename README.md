@@ -1,6 +1,4 @@
-# remix-workflows
-
-### Remix Workflows
+# Remix Workflows
 
 This is the Workflows feature of [SaasRock](https://saasrock.com), read the introduction article [here](https://saasrock.com/docs/articles/workflows).
 
